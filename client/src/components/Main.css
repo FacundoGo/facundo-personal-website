@@ -1,0 +1,7 @@
+#container-main > * {
+  width: 30%;
+}
+
+#container-main > * :hover {
+  color: rgb(59, 59, 247);
+}
