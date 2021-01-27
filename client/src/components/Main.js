@@ -9,12 +9,12 @@ export default class Main extends Component {
   render() {
     return (
             <div id="container-main">
-                  <Posts name="Experience"></Posts>
-                  <Posts name="Education"></Posts>
-                  <Posts name="Software Projects"></Posts>
-                  <Posts name="Services"></Posts>
-                  <Posts name="Contact"></Posts>
-                  <Posts name="Surprise"></Posts>
+                  <Posts name="Experience" img="../experience1.jpg"></Posts>
+                  <Posts name="Education" img="../education1.jpg"></Posts>
+                  <Posts name="Software Projects" img="../software1.jpg"></Posts>
+                  <Posts name="Services" img="../services1.jpg"></Posts>
+                  <Posts name="Contact" img="../contact1.jpg"></Posts>
+                  <Posts name="Surprise(!?)" img="../surprise1.jpg"></Posts>
             </div>
     )
   }

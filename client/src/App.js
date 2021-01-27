@@ -7,8 +7,8 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 function App() {
   return (
     <div className="App">
-        <Navbar />
-        <h1>Welcome! Bienvenidos! Willkommen! Benvenuti!</h1>
+        {/* <Navbar /> */}
+        <h1 style={{ marginTop: '30px' }}>Welcome! Bienvenidos! Willkommen! Benvenuti!</h1>
         <p>Hi! I'm Facundo, check out my page!</p>
         <Main></Main>
         <footer>

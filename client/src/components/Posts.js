@@ -5,13 +5,10 @@ import Card from 'react-bootstrap/Card'
 export default class Posts extends Component {
   render() {
     return (
-<Card>
-    <Card.Img variant="top" src="holder.js/100px160" />
-    <Card.Body>
-      <Card.Title>{this.props.name}</Card.Title>
-    </Card.Body>
+<Card style={{ width: '20rem' }}>
+    <Card.Img variant="top" src={this.props.img} />
     <Card.Footer>
-      <small className="text-muted">Go here!</small>
+    <Card.Title>{this.props.name}</Card.Title>
     </Card.Footer>
   </Card>
     )

@@ -1,5 +1,11 @@
+#container-main {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
 #container-main > * {
-  width: 30%;
+  width: 30em;
+  margin: 10px;
 }
 
 #container-main > * :hover {
