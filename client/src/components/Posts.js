@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import CardDeck from 'react-bootstrap/CardDeck'
 import Card from 'react-bootstrap/Card'
+import { Link } from 'react-router-dom'
 
 export default class Posts extends Component {
   render() {
@@ -8,7 +9,7 @@ export default class Posts extends Component {
 <Card style={{ width: '20rem' }}>
     <Card.Img variant="top" src={this.props.img} />
     <Card.Footer>
-    <Card.Title>{this.props.name}</Card.Title>
+    <Card.Title><Link to={`/${this.props.name}`}>{this.props.name}</Link></Card.Title>
     </Card.Footer>
   </Card>
     )
