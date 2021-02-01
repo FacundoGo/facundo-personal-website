@@ -10,14 +10,11 @@ function App() {
   return (
     <div className="App">
         {/* <Navbar /> */}
-        <h1 style={{ marginTop: '30px' }}>Facundo Gomez Vera</h1>
-        <h2>Welcome! Bienvenidos! Willkommen! Benvenuti!</h2>
-        <h4>Find out more about me</h4>
-        <Main></Main>
-        {/* <footer> */}
-        <p>Made with <img src={logo} className="App-logo" alt="logo" width="50px"/> in Berlin</p>
-        {/* </footer> */}
-
+        <Route
+          exact
+          path='/'
+          render={props => <Main {...props} />}
+        />
         {/* Routes  */}
         <Route
           exact
