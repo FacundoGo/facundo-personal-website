@@ -5,11 +5,14 @@ export default class Navbar extends Component {
   render() {
     return (
       <Nav className="justify-content-center" activeKey="/home">
-      <Nav.Item>
-        <Nav.Link href="/home">Education</Nav.Link>
+            <Nav.Item>
+        <Nav.Link href="/">Home</Nav.Link>
       </Nav.Item>
       <Nav.Item>
-        <Nav.Link eventKey="link-1">Experience</Nav.Link>
+        <Nav.Link href="/Education">Education</Nav.Link>
+      </Nav.Item>
+      <Nav.Item>
+        <Nav.Link href="/Experience">Experience</Nav.Link>
       </Nav.Item>
       <Nav.Item>
         <Nav.Link eventKey="link-2">Software Projects</Nav.Link>

@@ -10,7 +10,7 @@ export default class Main extends Component {
     return (
             <div>
         <h1 style={{ marginTop: '30px' }}>Hi! I'm Facundo.</h1>
-        <div style={{display: 'flex', justifyContent: 'center'}}><h4 style={{width: '50%', textAlign: 'center'}}>
+        <div style={{display: 'flex', justifyContent: 'center'}}><h4 style={{fontWeight:"300", width: '50%', textAlign: 'center'}}>
         Freelance Fullstack Developer and Accelerator Development Consultant at eWorks.</h4></div>
         {/* <Main></Main> */}
             <div id="container-main">
