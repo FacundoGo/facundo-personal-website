@@ -1,0 +1,36 @@
+.main {
+  display: 'flex';
+  flex-direction: 'column';
+  align-items: 'center';
+}
+.header {
+  margin-top: '3%'
+}
+
+.entries {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.entry {
+  height: auto;
+  width: 60vw;
+  text-align: left;
+  padding: 1%;
+}
+.role {
+  font-style: italic;
+  font-weight: 300;
+}
+h3 > a{
+  text-decoration: none;
+  color: black;
+}
+.dates {
+color: gray;
+font-weight: 400;
+}
+.location {
+  font-weight: 300;
+}
+
