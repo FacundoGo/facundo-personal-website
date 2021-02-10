@@ -19,7 +19,7 @@ export default class Main extends Component {
                   <Posts name="Software Projects" img="../software1.jpg"></Posts>
                   <Posts name="Services" img="../services1.jpg"></Posts>
                   <Posts name="Contact" img="../contact1.jpg"></Posts>
-                  <Posts name="Surprise(!?)" img="../surprise1.jpg"></Posts>
+                  <Posts name="Surprise" img="../surprise1.jpg"></Posts>
             </div>
         <footer style={{height: '20px'}}>
         Made with <img src={logo} className="App-logo" alt="logo" width="50px"/> in Berlin

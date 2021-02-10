@@ -1,0 +1,13 @@
+.form-container {
+  width: 100vw;
+  border: solid 2px red;
+  display: flex;
+  justify-content: center;
+}
+.form-content {
+  width: 50vw;
+  border: solid 2px blue;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
