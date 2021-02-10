@@ -15,15 +15,30 @@ export default function Contact() {
       event.preventDefault();
       event.stopPropagation();
     }
-
+    console.log(event)
     setValidated(true);
+    
+    // sendFeedback()
   };
 
+    const sendFeedback = (templateId, {message_html: message, from_name: name, reply_to: email}) => {
+      window.emailjs.send(
+        'gmail', templateId,
+        message
+        ).then(res => {
+          console.log('Email successfully sent!')
+        })
+        // Handle errors here however you like, or use a React error boundary
+        .catch(err => console.error('Oh well, you failed. Here some thoughts on the error that occured:', err))
+      }
+
   return (
-    <div className="form-container">
+    <div>
+  <Navbar></Navbar>
+  <div className="form-container">
     <Form className="form-content" noValidate validated={validated} onSubmit={handleSubmit}>
-      <Form.Row>
-        <Form.Group as={Col} md="5" controlId="validationCustom01">
+      <Form.Row className="email-form">
+        <Form.Group as={Col} md="4" controlId="validationCustom01">
           <Form.Label>First name</Form.Label>
           <Form.Control
             required
@@ -33,7 +48,7 @@ export default function Contact() {
           />
           <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
         </Form.Group>
-        <Form.Group as={Col} md="5" controlId="validationCustom02">
+        <Form.Group as={Col} md="4" controlId="validationCustom02">
           <Form.Label>Last name</Form.Label>
           <Form.Control
             required
@@ -44,8 +59,8 @@ export default function Contact() {
           <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
         </Form.Group>
         </Form.Row>
-        <Form.Row>
-        <Form.Group as={Col} md="7" controlId="validationCustomUsername">
+        <Form.Row className="email-form">
+        <Form.Group as={Col} md="8" controlId="validationCustomUsername">
           <Form.Label>Email</Form.Label>
           <InputGroup>
             <InputGroup.Prepend>
@@ -63,11 +78,11 @@ export default function Contact() {
           </InputGroup>
         </Form.Group>
         </Form.Row>
-      <Form.Row>
-      <Form.Group controlId="exampleForm.ControlTextarea1">
-    <Form.Label>Message</Form.Label>
-    <Form.Control as="textarea" rows={3} />
-  </Form.Group>
+      <Form.Row className="message-form">
+        <Form.Group controlId="exampleForm.ControlTextarea1">
+        <Form.Label>Message</Form.Label>
+        <Form.Control as="textarea" rows={3} cols={48} />
+    </Form.Group>
       </Form.Row>
       <Form.Group>
         <Form.Check
@@ -76,9 +91,13 @@ export default function Contact() {
           feedback="You must agree before submitting."
         />
       </Form.Group>
+      <div>
       <Button type="submit">Submit form</Button>
+      </div>
     </Form>
     </div> 
+    </div>
+    
   );
 }
 
