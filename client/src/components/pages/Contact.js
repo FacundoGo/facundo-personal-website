@@ -8,6 +8,24 @@ import InputGroup from 'react-bootstrap/InputGroup'
 
 export default function Contact() {
   const [validated, setValidated] = useState(false);
+  const [firstName, setFirstName] = useState('Name1');
+  const [lastName, setLastName] = useState('Last Name1');
+  const [email, setEmail] = useState('Email address1' );
+  const [message, setMessage] = useState('Message1')
+
+  const handleName = (event) => {
+    setFirstName(event.target.value)
+  }
+  const handleLastName = (event) => {
+    setLastName(event.target.value)
+  }
+  const handleEmail = (event) => {
+    setEmail(event.target.value)
+  }
+  const handleMessage = (event) => {
+    setMessage(event.target.value)
+  }
+
 
   const handleSubmit = (event) => {
     const form = event.currentTarget;
@@ -15,22 +33,25 @@ export default function Contact() {
       event.preventDefault();
       event.stopPropagation();
     }
-    console.log(event)
+    if (form.checkValidity() === true){
+      console.log(firstName, lastName, email, message)
+    }
+
     setValidated(true);
     
     // sendFeedback()
   };
 
-    const sendFeedback = (templateId, {message_html: message, from_name: name, reply_to: email}) => {
-      window.emailjs.send(
-        'gmail', templateId,
-        message
-        ).then(res => {
-          console.log('Email successfully sent!')
-        })
-        // Handle errors here however you like, or use a React error boundary
-        .catch(err => console.error('Oh well, you failed. Here some thoughts on the error that occured:', err))
-      }
+    // const sendFeedback = (templateId, {message_html: message, from_name: name, reply_to: email}) => {
+    //   window.emailjs.send(
+    //     'gmail', templateId,
+    //     message
+    //     ).then(res => {
+    //       console.log('Email successfully sent!')
+    //     })
+    //     // Handle errors here however you like, or use a React error boundary
+    //     .catch(err => console.error('Oh well, you failed. Here some thoughts on the error that occured:', err))
+    //   }
 
   return (
     <div>
@@ -44,7 +65,8 @@ export default function Contact() {
             required
             type="text"
             placeholder="First name"
-            defaultValue="Mark"
+            value={firstName}
+            onChange={handleName}
           />
           <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
         </Form.Group>
@@ -54,7 +76,8 @@ export default function Contact() {
             required
             type="text"
             placeholder="Last name"
-            defaultValue="Otto"
+            value={lastName}
+            onChange={handleLastName}
           />
           <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
         </Form.Group>
@@ -71,6 +94,8 @@ export default function Contact() {
               placeholder="Username"
               aria-describedby="inputGroupPrepend"
               required
+              value={email}
+              onChange={handleEmail}
             />
             <Form.Control.Feedback type="invalid">
               Please choose a username.
@@ -81,7 +106,13 @@ export default function Contact() {
       <Form.Row className="message-form">
         <Form.Group controlId="exampleForm.ControlTextarea1">
         <Form.Label>Message</Form.Label>
-        <Form.Control as="textarea" rows={3} cols={48} />
+        <Form.Control
+         as="textarea" 
+         rows={3} 
+         cols={48} 
+         value={message}
+        onChange={handleMessage}
+         />
     </Form.Group>
       </Form.Row>
       <Form.Group>
