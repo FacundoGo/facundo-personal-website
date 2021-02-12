@@ -5,6 +5,7 @@ import Form from 'react-bootstrap/Form'
 import Button from 'react-bootstrap/Button'
 import Col from 'react-bootstrap/Col'
 import InputGroup from 'react-bootstrap/InputGroup'
+import axios from 'axios'
 
 export default function Contact() {
   const [validated, setValidated] = useState(false);
@@ -28,30 +29,35 @@ export default function Contact() {
 
 
   const handleSubmit = (event) => {
+    event.preventDefault();
     const form = event.currentTarget;
     if (form.checkValidity() === false) {
-      event.preventDefault();
       event.stopPropagation();
     }
     if (form.checkValidity() === true){
       console.log(firstName, lastName, email, message)
+      sendEmail(firstName, lastName, email, message)
     }
 
     setValidated(true);
     
-    // sendFeedback()
+    
   };
 
-    // const sendFeedback = (templateId, {message_html: message, from_name: name, reply_to: email}) => {
-    //   window.emailjs.send(
-    //     'gmail', templateId,
-    //     message
-    //     ).then(res => {
-    //       console.log('Email successfully sent!')
-    //     })
-    //     // Handle errors here however you like, or use a React error boundary
-    //     .catch(err => console.error('Oh well, you failed. Here some thoughts on the error that occured:', err))
-    //   }
+  const sendEmail = (firstName, lastName, email, message) => {
+    axios.post('/submitContact', {
+      firstName,
+      lastName,
+      email,
+      message
+    })
+    .then(function (response) {
+      console.log(response);
+    })
+    .catch(function (error) {
+      console.log(error);
+    });
+  } 
 
   return (
     <div>
