@@ -45,18 +45,17 @@ export default function Contact() {
   };
 
   const sendEmail = (firstName, lastName, email, message) => {
-    axios.post('/submitContact', {
-      firstName,
-      lastName,
-      email,
-      message
-    })
-    .then(function (response) {
-      console.log(response);
-    })
-    .catch(function (error) {
-      console.log(error);
-    });
+    const serviceID = 'default_service';
+    const templateID = 'template_2xds8yh';
+ 
+    emailjs.sendForm(serviceID, templateID, firstName)
+     .then(() => {
+       btn.value = 'Send Email';
+       alert('Sent!');
+     }, (err) => {
+       btn.value = 'Send Email';
+       alert(JSON.stringify(err));
+     });
   } 
 
   return (
