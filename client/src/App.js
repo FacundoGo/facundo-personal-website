@@ -1,4 +1,4 @@
-import logo from './logo.svg';
+
 import './App.css';
 import Main from './components/Main';
 import Experience from './components/pages/Experience';
@@ -6,7 +6,7 @@ import Education from './components/pages/Education';
 import Contact from './components/pages/Contact';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import React from 'react';
-import { Route, Redirect } from 'react-router-dom';
+import { Route } from 'react-router-dom';
 
 function App() {
   return (

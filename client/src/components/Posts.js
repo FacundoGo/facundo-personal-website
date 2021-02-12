@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import CardDeck from 'react-bootstrap/CardDeck'
 import Card from 'react-bootstrap/Card'
 import { Link } from 'react-router-dom'
 import './Posts.css'
