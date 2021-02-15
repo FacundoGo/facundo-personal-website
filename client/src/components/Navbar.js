@@ -9,10 +9,10 @@ export default class Navbar extends Component {
         <Nav.Link href="/">Home</Nav.Link>
       </Nav.Item>
       <Nav.Item>
-        <Nav.Link href="/Education">Education</Nav.Link>
+        <Nav.Link href="/Experience">Experience</Nav.Link>
       </Nav.Item>
       <Nav.Item>
-        <Nav.Link href="/Experience">Experience</Nav.Link>
+        <Nav.Link href="/Education">Education</Nav.Link>
       </Nav.Item>
       <Nav.Item>
         <Nav.Link href="/Contact">Contact</Nav.Link>

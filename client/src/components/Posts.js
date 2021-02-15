@@ -9,7 +9,7 @@ export default class Posts extends Component {
 <Card style={{ width: '13rem' }}>
 <Link to={`/${this.props.name}`}></Link>
     <Card.Footer >
-    <Link className="card-label" to={`/${this.props.name}`}>{this.props.name}</Link>
+    <Link className="card-label" to={`/${this.props.name}`}><span className="emoji" role="img" aria-label={this.props.emoji}> {this.props.emoji}</span> {this.props.name}</Link>
     </Card.Footer>
   </Card>
     )
