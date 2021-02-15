@@ -1,11 +1,12 @@
 import React, { Component } from 'react'
 import Posts from './Posts'
 import './Main.css'
+import logo from '../react-logo.png';
 
 export default class Main extends Component {
   render() {
     return (
-        <div>
+        <div className="container-main">
         <h1 style={{ marginTop: '30px' }}>Hi! I'm Facundo.</h1>
         <div style={{display: 'flex', justifyContent: 'center'}}><h4 style={{fontWeight:"300", width: '50%', textAlign: 'center'}}>
         Freelance Fullstack Developer and Accelerator Development Consultant at eWorks.</h4></div>
@@ -18,7 +19,9 @@ export default class Main extends Component {
                   <Posts name="Contact" img="../contact1.jpg"></Posts>
                   {/* <Posts name="Surprise" img="../surprise1.jpg"></Posts> */}
             </div>
-
+        <footer>
+        Made with <img src={logo} className="App-logo" alt="logo"/> in Berlin
+        </footer>
         </div>
     )
   }

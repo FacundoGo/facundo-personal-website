@@ -68,6 +68,7 @@ const sendEmail = () => {
   return (
     <div>
   <Navbar></Navbar>
+  <h1 className="header">Contact</h1>
   <div className="form-container">
     <Form className="form-content" noValidate validated={validated} onSubmit={handleSubmit}>
       <Form.Row className="email-form">

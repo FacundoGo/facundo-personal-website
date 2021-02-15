@@ -30,7 +30,7 @@
 .App-link {
   color: #61dafb;
 }
-/* 
+
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
@@ -38,16 +38,15 @@
   to {
     transform: rotate(360deg);
   }
-} */
+}
 
 footer {
   position:absolute;
-  left:0;
-  bottom:10%;
-  right:0;
+  bottom: 0;
+  width: 100%;
   }
 
 .App-logo {
-  height: 5px;
-  width: 5px;
+  height: 50px;
+  width: 70px;
 }
