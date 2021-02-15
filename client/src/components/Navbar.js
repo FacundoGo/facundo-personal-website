@@ -15,16 +15,7 @@ export default class Navbar extends Component {
         <Nav.Link href="/Experience">Experience</Nav.Link>
       </Nav.Item>
       <Nav.Item>
-        <Nav.Link eventKey="link-2">Software Projects</Nav.Link>
-      </Nav.Item>
-      <Nav.Item>
-        <Nav.Link eventKey="link-2">What I can do for you</Nav.Link>
-      </Nav.Item>
-      <Nav.Item>
-        <Nav.Link eventKey="link-2">Contact</Nav.Link>
-      </Nav.Item>
-      <Nav.Item>
-        <Nav.Link eventKey="link-2">Surprise</Nav.Link>
+        <Nav.Link href="/Contact">Contact</Nav.Link>
       </Nav.Item>
     </Nav>
     )

@@ -5,14 +5,16 @@ import Form from 'react-bootstrap/Form'
 import Button from 'react-bootstrap/Button'
 import Col from 'react-bootstrap/Col'
 import InputGroup from 'react-bootstrap/InputGroup'
-import axios from 'axios'
+import emailjs from 'emailjs-com'
+import{ init } from 'emailjs-com';
+init("user_b4p7ysVMsSXdv4dPZOrV5");
 
 export default function Contact() {
   const [validated, setValidated] = useState(false);
-  const [firstName, setFirstName] = useState('Name1');
-  const [lastName, setLastName] = useState('Last Name1');
-  const [email, setEmail] = useState('Email address1' );
-  const [message, setMessage] = useState('Message1')
+  const [firstName, setFirstName] = useState('');
+  const [lastName, setLastName] = useState('');
+  const [email, setEmail] = useState('' );
+  const [message, setMessage] = useState('')
 
   const handleName = (event) => {
     setFirstName(event.target.value)
@@ -36,7 +38,7 @@ export default function Contact() {
     }
     if (form.checkValidity() === true){
       console.log(firstName, lastName, email, message)
-      sendEmail(firstName, lastName, email, message)
+      sendEmail()
     }
 
     setValidated(true);
@@ -44,19 +46,24 @@ export default function Contact() {
     
   };
 
-  const sendEmail = (firstName, lastName, email, message) => {
-    const serviceID = 'default_service';
-    const templateID = 'template_2xds8yh';
+  var templateParams = {
+    from_name: `${firstName + lastName}`,
+    lastName,
+    reply_to: email,
+    message
+};
  
-    emailjs.sendForm(serviceID, templateID, firstName)
-     .then(() => {
-       btn.value = 'Send Email';
-       alert('Sent!');
-     }, (err) => {
-       btn.value = 'Send Email';
-       alert(JSON.stringify(err));
-     });
-  } 
+const sendEmail = () => {
+  emailjs.send(`service_pb88ogc`, `template_2xds8yh`, templateParams)
+  .then(function(response) {
+      alert('you message was successfully sent!')
+      window.location.reload(false);
+     console.log('SUCCESS!', response.status, response.text);
+  }, function(error) {
+     console.log('FAILED...', error);
+  });
+
+}
 
   return (
     <div>
@@ -74,6 +81,9 @@ export default function Contact() {
             onChange={handleName}
           />
           <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
+          <Form.Control.Feedback type="invalid">
+              Your name please :)
+            </Form.Control.Feedback>
         </Form.Group>
         <Form.Group as={Col} md="4" controlId="validationCustom02">
           <Form.Label>Last name</Form.Label>
@@ -84,6 +94,9 @@ export default function Contact() {
             value={lastName}
             onChange={handleLastName}
           />
+              <Form.Control.Feedback type="invalid">
+              Your last name please :O
+            </Form.Control.Feedback>
           <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
         </Form.Group>
         </Form.Row>
@@ -116,8 +129,12 @@ export default function Contact() {
          rows={3} 
          cols={48} 
          value={message}
+         required
         onChange={handleMessage}
          />
+        <Form.Control.Feedback type="invalid">
+          Don't be shy now!
+        </Form.Control.Feedback>
     </Form.Group>
       </Form.Row>
       <Form.Group>

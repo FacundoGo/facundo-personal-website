@@ -1,4 +1,4 @@
-
+import logo from './react-logo.png';
 import './App.css';
 import Main from './components/Main';
 import Experience from './components/pages/Experience';
@@ -33,6 +33,9 @@ function App() {
           path='/Contact'
           render={props => <Contact {...props} />}
         />
+        <footer style={{height: '20px'}}>
+        Made with <img src={logo} className="App-logo" alt="logo"/> in Berlin
+        </footer>
     </div>
   );
 }
