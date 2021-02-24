@@ -57,7 +57,6 @@ const index = require('./routes/index');
 app.use((req, res) => {
   // If no routes match, send them the React HTML.
   res.sendFile(__dirname + "/client/build/index.html");
-  console.log('something is wrong after here')
 });
 
 module.exports = app;
