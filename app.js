@@ -52,7 +52,7 @@ app.locals.title = 'Express - Generated with IronGenerator v1.0.2';
 
 
 const index = require('./routes/index');
-app.use('/', index);
+// app.use('/', index);
 
 app.use((req, res) => {
   // If no routes match, send them the React HTML.
