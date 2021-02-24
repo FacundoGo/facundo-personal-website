@@ -47,7 +47,7 @@ app.use(favicon(path.join(__dirname, 'public', 'images', 'favicon.ico')));
 
 
 // default value for title local
-app.locals.title = 'Express - Generated with IronGenerator v1.0.2';
+app.locals.title = 'Express - Generated with IronGenerator v1.0.4';
 
 
 
@@ -57,6 +57,7 @@ const index = require('./routes/index');
 app.use((req, res) => {
   // If no routes match, send them the React HTML.
   res.sendFile(__dirname + "/client/build/index.html");
+  console.log('something is wrong after here')
 });
 
 module.exports = app;
