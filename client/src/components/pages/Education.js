@@ -10,7 +10,7 @@ export default function Education() {
         <div className="entries">
         <div className="entry">
         <h3><a href="www.ironhack.com" target="_blank" className="companyLink">Ironhack - </a><span className="role">Web Development Bootcamp</span></h3>
-        <h5 className="dates">Oct/2017 - Jan/2021</h5>
+        <h5 className="dates">Oct/2020 - Jan/2021</h5>
         <h5 className="location">Berlin, Germany</h5>
         <p>Javascript ES6+, ReactJS, HTML & CSS, NodeJS, ExpressJS, MongoDB, HTTP requests & REST APIs</p>
         </div>
