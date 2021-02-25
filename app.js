@@ -53,14 +53,22 @@ app.locals.title = 'Express - Generated with IronGenerator v1.0.1';
 
 // const index = require('./routes/index');
 // app.use('/', index);
-const root = require('path').join(__dirname, 'client', 'build')
-app.use(express.static(root));
-app.get("*", (req, res) => {
-    res.sendFile('index.html', { root });
-})
+// const root = require('path').join(__dirname, 'client', 'build')
+// app.use(express.static(root));
+// app.get("*", (req, res) => {
+//     res.sendFile('index.html', { root });
+// })
 // app.use((req, res) => {
 //   // If no routes match, send them the React HTML.
 //   res.sendFile(__dirname + "/client/build/index.html");
 // });
+const path = require('path')
+let root = path.join(__dirname, '..', 'build/')
+app.use(express.static(root))
+app.use(function(req, res, next) {
+  if (req.method === 'GET' && req.accepts('html') && !req.is('json') && !req.path.includes('.')) {
+    res.sendFile('index.html', { root })
+  } else next()
+})
 
 module.exports = app;
