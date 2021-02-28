@@ -47,7 +47,7 @@ app.use(favicon(path.join(__dirname, 'public', 'images', 'favicon.ico')));
 
 
 // default value for title local
-app.locals.title = 'Express - Generated with IronGenerator v1.0.08';
+app.locals.title = 'Express - Generated with IronGenerator v1.0.1';
 
 
 
@@ -62,5 +62,13 @@ app.get("*", (req, res) => {
 //   // If no routes match, send them the React HTML.
 //   res.sendFile(__dirname + "/client/build/index.html");
 // });
+// const path = require('path')
+// let root = path.join(__dirname, '..', 'build/')
+// app.use(express.static(root))
+// app.use(function(req, res, next) {
+//   if (req.method === 'GET' && req.accepts('html') && !req.is('json') && !req.path.includes('.')) {
+//     res.sendFile('index.html', { root })
+//   } else next()
+// })
 
 module.exports = app;

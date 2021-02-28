@@ -10,12 +10,22 @@ export default class Experience extends Component {
         <h1 className="header">Experience</h1>
         <div className="entries">
         <div className="entry">
-        <h3><a href="www.leonyte.com" target="_blank" className="companyLink">Leonyte Biosystems - </a><span className="role">Chief Operating Officer</span></h3>
+        <h3><a href="https://facundo-gomez.herokuapp.com/Experience" className="companyLink"> </a><span className="role">COO & Head of Product</span></h3>
+        <h5 className="dates">Nov/2020 - Present</h5>
+        <h5 className="location">Remote</h5>
+        <ul>
+        <li>Assess and improve the Digital Health accelerator program of a large pharmaceutical</li>
+        <li>Building web based prototypes for startups</li>
+        <li>Interim Product Manager for clean tech start ups</li>
+      </ul>
+        </div>
+        <div className="entry">
+        <h3><a href="www.leonyte.com" target="_blank" className="companyLink">Leonyte Biosystems - </a><span className="role">COO & Head of Product</span></h3>
         <h5 className="dates">Jan/2017 - Nov/2020</h5>
         <h5 className="location">Berlin, Germany</h5>
         <ul>
+        <li>Led product development strategy for a high-performing technical of over 17 scientists and engineers</li>
         <li>Fundraised over €3.4 million in 3 rounds</li>
-        <li>Defined and implemented scalable processes for a high performing technical team of over 17 scientists and engineers</li>
         <li>Developed and managed entire B2B accounts in the US and Europe</li>
       </ul>
         </div>
