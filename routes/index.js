@@ -5,7 +5,9 @@ const router  = express.Router();
 router.get('/', (req, res, next) => {
   res.render('index');
 });
-
+router.get('/Contact', (req, res, next) => {
+  res.render('index');
+});
 
 
 module.exports = router;
