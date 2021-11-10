@@ -73,11 +73,11 @@ const sendEmail = () => {
     <Form className="form-content" noValidate validated={validated} onSubmit={handleSubmit}>
       <Form.Row className="email-form">
         <Form.Group as={Col} md="4" controlId="validationCustom01">
-          <Form.Label></Form.Label>
+          <Form.Label>1</Form.Label>
           <Form.Control
             required
             type="text"
-            placeholder="First name"
+            placeholder="First Name"
             value={firstName}
             onChange={handleName}
           />
@@ -87,11 +87,11 @@ const sendEmail = () => {
             </Form.Control.Feedback>
         </Form.Group>
         <Form.Group as={Col} md="4" controlId="validationCustom02">
-          <Form.Label></Form.Label>
+          <Form.Label>2</Form.Label>
           <Form.Control
             required
             type="text"
-            placeholder="Last name"
+            placeholder="Last Name"
             value={lastName}
             onChange={handleLastName}
           />
